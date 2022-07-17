@@ -1,0 +1,96 @@
+.main {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  height: 100vh;
+}
+
+.cards {
+  height: 100%;
+  overflow: auto;
+  width: 20%;
+  min-width: 300px;
+}
+
+.map {
+  height: 100vh;
+  flex: 1;
+}
+
+@media all and (max-width: 480px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100vh;
+  }
+
+  .cards {
+    flex: 1;
+    overflow: auto;
+    width: 100%;
+    min-width: 300px;
+  }
+
+  .map {
+    width: 100%;
+    flex: 1;
+  }
+}
+
+
+
+.card-wrapper {
+  height: 64px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(215, 218, 232);
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  column-gap: 16px;
+  border: solid 1px;
+  padding: 4px;
+
+  &__title {
+    font-weight: 700;
+    background-color: lightslategray;
+    color: white;
+    padding: 4px;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 4px;
+  }
+
+  &__description-arrow-right:after {
+    content: "\2192";
+    color: green;
+    font-weight: 900;
+  }
+
+  &__description-arrow-left:after {
+    content: "\2190";
+    color: red;
+    font-weight: 900;
+  }
+}
+
+.tooltip {
+  font-size: medium;
+
+  &-delivery {
+    background-color: rgb(126, 169, 161);
+  }
+
+  &-pickup {
+    background-color: rgb(190, 162, 171);
+  }
+}
